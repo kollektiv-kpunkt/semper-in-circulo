@@ -20,6 +20,9 @@
 # Configuration
 wp-config.php
 
+# Plugins
+/wp-content/plugins/
+
 # Example themes
 /wp-content/themes/twenty*/
 
