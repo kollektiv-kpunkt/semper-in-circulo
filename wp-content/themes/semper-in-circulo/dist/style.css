@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
+.sic-testimonial-stage-inner {
+  width: 1080px;
+  max-width: 90vw;
+  margin: 0 auto;
+}
+
+.sic-testimonial-wrapper {
+  --sic-testi-base-size: 15px;
+}
+@media (max-width: 1200px) {
+  .sic-testimonial-wrapper {
+    --sic-testi-base-size: 1.25vw;
+  }
+}
+
+.sic-testimonial-inner {
+  position: relative;
+  height: calc(72 * var(--sic-testi-base-size));
+  width: calc(72 * var(--sic-testi-base-size));
+}
+
+.sic-testimonial-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.sic-testimonial-image-wrapper {
+  height: calc(57.333333 * var(--sic-testi-base-size));
+  width: calc(46.66666 * var(--sic-testi-base-size));
+}
+.sic-testimonial-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sic-testimonial-cutout svg, .sic-testimonial-arrows svg {
+  width: 100%;
+  height: 100%;
+}
+
+.sic-testimonial-logo {
+  position: absolute;
+  top: calc(2 * var(--sic-testi-base-size));
+  right: calc(8 * var(--sic-testi-base-size));
+}
+.sic-testimonial-logo svg {
+  height: calc(15 * var(--sic-testi-base-size));
+  width: auto;
+}
+
+.sic-testimonial-ghost {
+  width: calc(68 * var(--sic-testi-base-size));
+  height: calc(37 * var(--sic-testi-base-size));
+  shape-outside: url("data: image/svg+xml;charset=UTF-8,%3csvg viewBox='0 0 648 550' fill='none' xmlns='http://www.w3.org/2000/svg' %3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0V549.26C3.30005 549.31 6.59998 549.35 9.92004 549.35C399.459 549.35 609.985 300.563 647.78 0H0Z' fill='%23FF0000' /%3e%3c/svg%3e");
+  shape-margin: calc(2 * var(--sic-testi-base-size));
+  float: left;
+}
+
+.sic-testimonial-text-outer {
+  margin-top: calc(20.33333 * var(--sic-testi-base-size));
+}
+
+.sic-testimonial-text-inner {
+  max-width: calc(70 * var(--sic-testi-base-size));
+}
+.sic-testimonial-text-inner p {
+  font-weight: bold;
+  font-size: calc(2 * var(--sic-testi-base-size));
+}
+.sic-testimonial-text-inner p.sic-testimonial-claim {
+  font-size: calc(1.6 * var(--sic-testi-base-size));
+}
+
+.sic-testimonial-boxes-wrapper {
+  position: absolute;
+  bottom: calc(4.8 * var(--sic-testi-base-size));
+  left: calc(2 * var(--sic-testi-base-size));
+}
+.sic-testimonial-boxes-wrapper .sic-testimonial-box + .sic-testimonial-box {
+  margin-top: calc(2 * var(--sic-testi-base-size));
+}
+.sic-testimonial-boxes-wrapper .sic-testimonial-box {
+  max-width: calc(68 * var(--sic-testi-base-size));
+}
+.sic-testimonial-boxes-wrapper .sic-testimonial-box span {
+  line-height: 1;
+  padding: 0 0.15em;
+  display: inline-block;
+  background-image: linear-gradient(to right, white 0, white 100%);
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-color: white;
+  box-shadow: 0.05em 0 0 white, -0.05em 0 0 white;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  display: inline;
+  font-weight: bold;
+}
+.sic-testimonial-boxes-wrapper .sic-testimonial-box span.sic-testimonial-name {
+  font-size: calc(4.8 * var(--sic-testi-base-size));
+  margin-bottom: calc(2 * var(--sic-testi-base-size));
+}
+.sic-testimonial-boxes-wrapper .sic-testimonial-box span.sic-testimonial-position {
+  font-size: calc(3.3 * var(--sic-testi-base-size));
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+}

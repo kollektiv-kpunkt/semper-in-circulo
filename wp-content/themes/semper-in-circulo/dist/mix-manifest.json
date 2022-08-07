@@ -1,0 +1,9 @@
+{
+    "/app.js": "/app.js",
+    "/theme.css": "/theme.css",
+    "/style.css": "/style.css",
+    "/font-awesome.min.css": "/font-awesome.min.css",
+    "/app.min.js": "/app.min.js",
+    "/bundle.css": "/bundle.css",
+    "/bundle.min.css": "/bundle.min.css"
+}

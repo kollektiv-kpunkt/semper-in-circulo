@@ -7,7 +7,7 @@ mix.webpackConfig({
 
 mix
   .setPublicPath("dist")
-  .setResourceRoot("/wp-content/themes/to-mellon-mas/dist/")
+  .setResourceRoot("/wp-content/themes/semper-in-circulo/dist/")
   .js("src/js/app.js", "dist")
   .minify("dist/app.js", "dist/app.min.js")
   .sass("src/css/style.scss", "dist")
