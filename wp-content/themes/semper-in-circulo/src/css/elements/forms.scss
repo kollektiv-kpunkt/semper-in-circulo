@@ -1,0 +1,116 @@
+.sic-form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    column-gap: var(--gutter);
+    row-gap: var(--rowgutter);
+
+    --cols: 2;
+    --gutter: 2rem;
+    --rowgutter: 1rem;
+    --formcolor: var(--accent-120);
+
+    @media (max-width: 780px) {
+        flex-direction: column;
+    }
+
+    &.sic-form-white {
+        --formcolor: white;
+    }
+
+    .sic-button {
+        margin-top: var(--rowgutter);
+        --btn-border: var(--formcolor);
+        --btn-color: var(--formcolor);
+
+        &[type="submit"]:not(.w-full) {
+            width: calc(100% / var(--cols) - (var(--cols) - 1) * var(--gutter) / var(--cols));
+
+            @media (max-width: 780px) {
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+.sic-form-group {
+    width: calc(100% / var(--cols) - (var(--cols) - 1) * var(--gutter) / var(--cols));
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.25rem;
+
+    @media (max-width: 780px) {
+        width: 100%;
+    }
+
+    &.sic-form-group-fullwidth {
+        width: 100%;
+    }
+
+    &.sic-form-group-checkbox {
+        flex-direction: row;
+
+        label {
+            font-family: "roboto", sans-serif;
+            text-transform: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding-left: 1.6em;
+            text-indent: -0.8em;
+        }
+    }
+}
+
+.sic-form-group label {
+    font-size: 1.25rem;
+    font-family: "akrobat", sans-serif;
+    text-transform: uppercase;
+    text-align: start;
+    font-weight: bold;
+    color: var(--formcolor);
+}
+
+.sic-form-input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--formcolor);
+    padding: 0.1em 0;
+    outline: none;
+}
+
+.sic-form-group-checkbox label {
+    cursor: pointer;
+}
+
+
+.sic-form-group-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.sic-form-group-checkbox input[type="checkbox"]+label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f0c8";
+    letter-spacing: 10px;
+    cursor: pointer;
+}
+
+.sic-form-group-checkbox input[type="checkbox"]:checked+label:before {
+    content: "\f14a";
+    color: var(--formcolor);
+}
+
+.sic-form-overlay {
+    z-index: 100000000;
+    backdrop-filter: blur(0.5rem);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s ease opacity, 0.25s ease visibility;
+}
+
+.sic-form-overlay.sic-form-overlay-visible {
+    opacity: 1;
+    visibility: visible;
+}

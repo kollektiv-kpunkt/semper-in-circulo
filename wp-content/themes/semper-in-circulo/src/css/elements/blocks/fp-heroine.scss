@@ -1,0 +1,167 @@
+.sic-fp-heroine-inner {
+    height: 80vh;
+    position: relative;
+}
+
+.sic-fp-heroine-illu {
+    position: absolute;
+
+    &[data-image="flohmarkt"] {
+        top: 12.6vh;
+        right: 1.35vw;
+        height: 27.3318872vh;
+
+        @media screen and (max-aspect-ratio: 1/1) {
+            top: 7vh;
+            right: 0vw;
+            height: 22vh;
+        }
+    }
+
+    &[data-image="repaircafe"] {
+        top: 10.84598vh;
+        left: 18.8020vw;
+        height: 41.9956vh;
+
+        @media screen and (max-aspect-ratio: 1/1) {
+            top: 6.5vh;
+            left: 12.5vw;
+            height: 33.5vh;
+        }
+    }
+
+    &[data-image="velomech"] {
+        top: 22.03904vh;
+        right: 22.44791vw;
+        height: 43.81778vh;
+
+        @media screen and (max-aspect-ratio: 4/3) {
+            right: 15vw;
+        }
+
+        @media screen and (max-aspect-ratio: 1/1) {
+            top: 20vh;
+            right: 10vw;
+            height: 35vh;
+        }
+    }
+
+    &[data-image="foodwaste"] {
+        top: 18.047vh;
+        left: 0.98vw;
+        height: 44.94577vh;
+
+        @media screen and (max-aspect-ratio: 4/3) {
+            left: -3vw;
+        }
+
+        @media screen and (max-aspect-ratio: 1/1) {
+            top: 18vh;
+            left: -7vw;
+            height: 40vh;
+        }
+    }
+
+    &[data-image="kleidertausch"] {
+        top: 10.585vh;
+        right: 40.67708vw;
+        height: 56.312vh;
+
+        @media screen and (max-aspect-ratio: 4/3) {
+            right: 32vw;
+        }
+
+        @media screen and (max-aspect-ratio: 1/1) {
+            top: 12vh;
+            height: 45vh;
+        }
+    }
+
+    &[data-image="baustelle"] {
+        bottom: 0;
+        left: 0;
+        width: 33.22916vw;
+
+        @media screen and (max-aspect-ratio: 4/3) {
+            width: 40vw;
+        }
+
+        @media screen and (max-aspect-ratio: 1/1) {
+            width: 50vw;
+        }
+    }
+
+    &[data-image="recycling"] {
+        bottom: 0;
+        right: 0;
+        width: 25.2083vw;
+
+        @media screen and (max-aspect-ratio: 4/3) {
+            width: 32vw;
+        }
+
+        @media screen and (max-aspect-ratio: 1/1) {
+            width: 40vw;
+        }
+    }
+
+    &.sic-fp-heroine-mobile {
+        display: none;
+    }
+
+    @media screen and (max-aspect-ratio: 3/4) {
+        display: none;
+
+        &.sic-fp-heroine-mobile {
+            display: block;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom left;
+        }
+    }
+}
+
+.sic-fp-heroine-content-wrapper {
+    position: absolute;
+    bottom: -10%;
+    z-index: 100;
+    width: 100%;
+
+    .sic-fp-heroine-content {
+        background-color: #25a97a80;
+        backdrop-filter: blur(1rem);
+
+        h1 {
+            margin-bottom: 0.5rem;
+
+            @media (max-width: 780px) {
+                font-size: 3rem;
+            }
+        }
+        h2 {
+            margin-bottom: 1rem;
+
+            @media (max-width: 780px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        p {
+            font-size: 1.25rem;
+            font-weight: 500;
+
+            @media (max-width: 780px) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.sic-fp-heroine-buttons {
+    @media (max-width: 780px) {
+        flex-direction: column;
+    }
+}

@@ -1,7 +1,154 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "fonts/Akrobat-ExtraBold.scss";
 
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     background-color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6,.sic-akrobat {
+    font-family: "Akrobat", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+html {
+    font-size: clamp(15px, 1vw, 18px);
+
+    @media (max-width: 780px) {
+        font-size: 14px;
+    }
+}
+
+div[data-block-name="core/none"]+div[data-block-name="core/paragraph"], p+p {
+    margin-top: 1rem;
+}
+
+h1 {
+    font-size: 4.5rem;
+}
+
+h2 {
+    font-size: 3.75rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5,
+h6 {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 980px) {
+    h1 {
+        font-size: 3.75rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5,
+    h6 {
+        font-size: 1.0rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5,
+    h6 {
+        font-size: 1.0rem;
+    }
+}
+
+span.sic-highlight {
+    color: var(--textcolor);
+    line-height: 1;
+    padding: 0 0.15em;
+    margin-bottom: 0.05em;
+    display: inline-block;
+    background-image: linear-gradient(to right, var(--bgcolor) 0, var(--bgcolor) 100%);
+    background-size: 100% 100%;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-color: var(--bgcolor);
+    box-shadow: 0.05em 0 0 var(--bgcolor), -0.05em 0 0 var(--bgcolor);
+    box-decoration-break: clone;
+    display: inline;
+
+    --textcolor: var(--accent-10);
+    --bgcolor: var(--accent-120);
+
+    &.sic-highlight-neg {
+        --textcolor: var(--accent-120);
+        --bgcolor: var(--accent-10);
+    }
+}
+
+a:not(.sic-button):not(.sic-noline) {
+    color: var(--linkcolor);
+    line-height: 1;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+    background-image: linear-gradient(to right, var(--linkcolor) 0, var(--linkcolor) 100%);
+    background-size: 100% 0.15em;
+    background-repeat: repeat-x;
+    background-position: bottom;
+
+    --linkcolor: var(--accent-120);
+    --linkhover: white;
+
+    transition: 0.125s ease-in-out background-size, 0.125s ease-in-out color;
+}
+
+a:hover {
+    background-size: 100% 100%;
+    color: var(--linkhover);
+}
+
+.text-white a {
+    --linkcolor: white;
+    --linkhover: var(--accent-120);
+}
+
+p.pagelead {
+    font-size: 1.15rem;
+    margin-bottom: 4rem;
 }

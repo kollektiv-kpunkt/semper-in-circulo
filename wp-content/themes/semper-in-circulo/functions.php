@@ -7,6 +7,7 @@ $dotenv->safeLoad();
 function sic_scripts() {
     wp_enqueue_style( 'bundle', get_template_directory_uri() . '/dist/bundle.min.css', [], "2.0.0" );
     wp_enqueue_script( 'bundle', get_template_directory_uri() . '/dist/app.min.js', array(), "2.0.0", true );
+    wp_enqueue_script( 'hyphenopoly', get_template_directory_uri() . '/lib/hyphenopoly/Hyphenopoly_Loader.js', array('jquery'), '1.0.0', false );
 }
 add_action( 'wp_enqueue_scripts', 'sic_scripts' );
 
@@ -19,6 +20,49 @@ function sic_theme_support() {
 }
 add_action( 'after_setup_theme', 'sic_theme_support' );
 
+
+function sic_menus() {
+  register_nav_menu('sic-main-nav',__( 'Main Navigation' ));
+  register_nav_menu('sic-footer-nav',__( 'Footer Navigation' ));
+}
+add_action( 'init', 'sic_menus' );
+
+function sic_menu_items( $location, $args = [] ) {
+
+    // Get all locations
+    $locations = get_nav_menu_locations();
+
+    // Get object id by location
+    $object = wp_get_nav_menu_object( $locations[$location] );
+
+    // Get menu items by menu name
+    $menu_items = wp_get_nav_menu_items( $object->name, $args );
+
+    // Return menu post objects
+    return $menu_items;
+}
+
+add_filter( 'wp_get_nav_menu_items', 'prefix_nav_menu_classes', 10, 3 );
+
+function prefix_nav_menu_classes($items, $menu, $args) {
+    _wp_menu_item_classes_by_context($items);
+    return $items;
+}
+
+
+/* Widgets */
+
+function sic_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Footer Widget',
+		'id'            => 'footer_widget',
+		'before_widget' => '<div class="sic-footer-widget">',
+		'after_widget'  => '</div>'
+	) );
+
+}
+add_action( 'widgets_init', 'sic_widgets_init' );
 
 
 // Shortcodes
@@ -34,6 +78,15 @@ function sic_element_shortcode($atts) {
 }
 
 add_shortcode('sic-element', 'sic_element_shortcode');
+
+function sic_highlight_shortcode($atts, $content = "") {
+    $args = shortcode_atts( array(
+        "classes" => "",
+    ), $atts, "sic-highlight" );
+    return "<span class='sic-highlight {$args["classes"]}'>{$content}</span>";
+}
+
+add_shortcode('sic', 'sic_highlight_shortcode');
 
 
 // ACF
@@ -72,14 +125,80 @@ function sic_blocktypes() {
 
     // Check function exists.
     if( function_exists('acf_register_block_type') ) {
-        // acf_register_block_type(array(
-        //     'name'              => 'heroine',
-        //     'title'             => __('Heroine Section'),
-        //     'description'       => __('Heroine Section for the homepage'),
-        //     'render_template'   => 'template-parts/blocks/heroine.php',
-        //     'category'          => 'sic',
-        //     'icon'              => '',
-        //     'keywords'          => array("hero", "heroine", "section"),
-        // ));
+        acf_register_block_type(array(
+            'name'              => 'fp-heroine',
+            'title'             => __('Frontpage Heroine'),
+            'description'       => __('Heroine on the frontpage of the theme.'),
+            'render_template'   => 'template-parts/blocks/fp-heroine.php',
+            'category'          => 'sic',
+            'icon'              => '',
+            'keywords'          => array("frontpage", "heroine"),
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'button',
+            'title'             => __('SIC Button'),
+            'description'       => __('Button for the semper in circulo theme.'),
+            'render_template'   => 'template-parts/blocks/button.php',
+            'category'          => 'sic',
+            'icon'              => '',
+            'keywords'          => array("button", "buttons"),
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'toggle',
+            'title'             => __('Detail Toggle'),
+            'description'       => __('Toggle that opens/closes based on user interaction'),
+            'render_template'   => 'template-parts/blocks/toggle.php',
+            'category'          => 'sic',
+            'icon'              => '',
+            'keywords'          => array("toggle", "detail"),
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'img-spacer',
+            'title'             => __('Image Spacer'),
+            'description'       => __('Spacing random image'),
+            'render_template'   => 'template-parts/blocks/img-spacer.php',
+            'category'          => 'sic',
+            'icon'              => '',
+            'keywords'          => array("Image Spacer", "spacer", "image"),
+        ));
     }
+}
+
+add_filter( 'render_block', 'sic_wrap_blocks', 10, 2 );
+
+function sic_wrap_blocks( $block_content, $block ) {
+    $fw = [
+        "acf/fp-heroine",
+        "core/shortcode"
+    ];
+    $lg = [
+        ""
+    ];
+    $md = [
+        "core/columns", "acf/img-spacer"
+    ];
+
+    if ($block['blockName'] == "") {
+        $block['blockName'] = "core/none";
+    }
+
+    if (in_array($block['blockName'], $fw)) {
+        $width = "fw-container";
+    } else if (in_array($block['blockName'], $lg)) {
+        $width = "lg-container";
+    } else if (in_array($block['blockName'], $md)) {
+        $width = "md-container";
+    } else {
+        if (is_front_page()) {
+            $width = "md-container";
+        } else {
+            $width = "sm-container";
+        }
+    }
+
+    $block_content = "<div data-block-name='{$block["blockName"]}' class='{$width}'>" . $block_content . "</div>";
+    return $block_content;
 }

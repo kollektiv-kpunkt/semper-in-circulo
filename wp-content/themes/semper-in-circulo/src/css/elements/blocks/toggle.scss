@@ -1,0 +1,45 @@
+.sic-toggle-details {
+    width: 100%;
+    border: 2px solid var(--accent-120);
+    border-radius: 2px;
+    padding: 1rem;
+    background-color: var(--accent-10);
+    transition: 0.25s ease background-color;
+
+    summary {
+        list-style: none;
+        cursor: pointer;
+        color: var(--accent-120);
+        font-weight: bold;
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .sic-toggle-icon {
+        font-size: 4rem;
+        height: 1.25rem;
+        width: 1.25rem;
+        line-height: 0.28;
+        transform-origin: 0.65rem 0.65rem;
+        transform: rotate(90deg) translateY(-5px);
+        transition: 0.25s ease transform;
+    }
+
+    &[open] {
+        background-color: var(--accent);
+
+        .sic-toggle-summary {
+            color: white;
+        }
+
+        .sic-toggle-icon {
+            transform: rotate(-90deg) translateY(-10px);
+        }
+
+        .sic-toggle-content {
+            color: white
+        }
+    }
+}

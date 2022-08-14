@@ -931,13 +931,55 @@ video {
   isolation: isolate;
 }
 
+.my-20{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
 }
 
-.mt-14{
-  margin-top: 3.5rem;
+.mt-32{
+  margin-top: 8rem;
+}
+
+.mb-40{
+  margin-bottom: 10rem;
+}
+
+.mt-6{
+  margin-top: 1.5rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
+}
+
+.ml-0{
+  margin-left: 0px;
+}
+
+.mt-40{
+  margin-top: 10rem;
+}
+
+.mb-28{
+  margin-bottom: 7rem;
+}
+
+.mr-6{
+  margin-right: 1.5rem;
+}
+
+.mr-4{
+  margin-right: 1rem;
 }
 
 .mt-12{
@@ -956,6 +998,10 @@ video {
   display: inline;
 }
 
+.flex{
+  display: flex;
+}
+
 .table{
   display: table;
 }
@@ -972,14 +1018,124 @@ video {
   display: none;
 }
 
+.w-full{
+  width: 100%;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-end{
+  justify-content: flex-end;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.gap-4{
+  gap: 1rem;
+}
+
+.gap-10{
+  gap: 2.5rem;
+}
+
+.gap-9{
+  gap: 2.25rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
+}
+
 .truncate{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.bg-accent{
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 169 122 / var(--tw-bg-opacity));
+}
+
+.bg-accent-20{
+  --tw-bg-opacity: 1;
+  background-color: rgb(211 238 228 / var(--tw-bg-opacity));
+}
+
+.bg-secondary-20{
+  --tw-bg-opacity: 1;
+  background-color: rgb(206 222 226 / var(--tw-bg-opacity));
+}
+
+.bg-secondary-120{
+  --tw-bg-opacity: 1;
+  background-color: rgb(7 72 88 / var(--tw-bg-opacity));
+}
+
+.bg-accent-30{
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 230 216 / var(--tw-bg-opacity));
+}
+
+.p-8{
+  padding: 2rem;
+}
+
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.pt-16{
+  padding-top: 4rem;
+}
+
+.pb-4{
+  padding-bottom: 1rem;
+}
+
 .text-center{
   text-align: center;
+}
+
+.text-start{
+  text-align: start;
+}
+
+.text-end{
+  text-align: end;
+}
+
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-6xl{
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .uppercase{
@@ -994,9 +1150,23 @@ video {
   font-style: italic;
 }
 
+.leading-none{
+  line-height: 1;
+}
+
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-secondary-120{
+  --tw-text-opacity: 1;
+  color: rgb(7 72 88 / var(--tw-text-opacity));
+}
+
+.text-secondary-70{
+  --tw-text-opacity: 1;
+  color: rgb(83 140 154 / var(--tw-text-opacity));
 }
 
 .underline{

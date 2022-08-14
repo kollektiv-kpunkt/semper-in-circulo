@@ -1,0 +1,43 @@
+.sic-footer-wrapper {
+    hr.sic-hr {
+        border: 0;
+        border-top: 2px solid var(--secondary-120);
+        margin-bottom: 2rem;
+    }
+
+    .sic-highlight {
+        color: var(--secondary-10);
+        background-image: linear-gradient(to right, var(--secondary-120) 0, var(--secondary-120) 100%);
+        background-color: var(--secondary-120);
+        box-shadow: 0.05em 0 0 var(--secondary-120), -0.05em 0 0 var(--secondary-120);
+    }
+
+    a:not(.sic-button):not(.sic-noline) {
+        --linkcolor: var(--secondary-120);
+    }
+}
+
+.sic-footer-logo {
+    a {
+        background-image: none !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        color: inherit !important;
+    }
+    svg {
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+.sic-footer-menu {
+    @media (max-width: 980px) {
+        justify-content: start;
+        margin-top: 2.5rem;
+    }
+
+    @media (max-width: 780px) {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}

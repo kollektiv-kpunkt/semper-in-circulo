@@ -1,0 +1,17 @@
+.sic-logo-text {
+    row-gap: 0.125rem;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    span {
+        &:nth-child(1) {
+            font-size: 1rem;
+        }
+        &:nth-child(2) {
+            font-size: 1.05rem;
+        }
+        &:nth-child(3) {
+            font-size: 0.58rem;
+        }
+    }
+}
