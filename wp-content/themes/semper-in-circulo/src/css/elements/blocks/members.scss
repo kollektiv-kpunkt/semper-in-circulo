@@ -1,0 +1,32 @@
+.sic-people-inner {
+    --cols: 3;
+    --gutter: 2rem;
+
+    gap: var(--gutter);
+
+    .sic-person-wrapper {
+        width: calc(100% / var(--cols) - ((var(--cols) - 1) * var(--gutter) / var(--cols)));
+    }
+
+    .sic-person-image {
+        padding-bottom: 100%;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: contain;
+        }
+    }
+
+    @media (max-width: 980px) {
+        --cols: 2;
+    }
+
+    @media (max-width: 480px) {
+        --cols: 1;
+    }
+}

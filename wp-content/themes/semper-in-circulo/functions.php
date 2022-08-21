@@ -64,6 +64,24 @@ function sic_widgets_init() {
 }
 add_action( 'widgets_init', 'sic_widgets_init' );
 
+function sic_htaccess( $rules ) {
+    $content = <<<EOD
+    \n
+    Options +FollowSymLinks -MultiViews
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^api/?$ /wp-content/themes/semper-in-circulo/api/index.php [L,NC]
+    RewriteRule ^api/(.+)$ /wp-content/themes/semper-in-circulo/api/index.php [L,NC]\n\n
+    EOD;
+    return $content . $rules;
+}
+add_filter('mod_rewrite_rules', 'sic_htaccess');
+
+function sic_enable_flush_rules() {
+    global $wp_rewrite;
+    $wp_rewrite->flush_rules();
+}
+add_action( "admin_init", 'sic_enable_flush_rules' );
 
 // Shortcodes
 
@@ -163,6 +181,36 @@ function sic_blocktypes() {
             'category'          => 'sic',
             'icon'              => '',
             'keywords'          => array("Image Spacer", "spacer", "image"),
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'people',
+            'title'             => __('Members of the comitee'),
+            'description'       => __('Display a grid of members of the comitee'),
+            'render_template'   => 'template-parts/blocks/people.php',
+            'category'          => 'sic',
+            'icon'              => '',
+            'keywords'          => array("people", "member", "members"),
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'logos',
+            'title'             => __('Logos of comitee'),
+            'description'       => __('Display a grid of logos of the comitee'),
+            'render_template'   => 'template-parts/blocks/logos.php',
+            'category'          => 'sic',
+            'icon'              => '',
+            'keywords'          => array("logos", "logo", "logos"),
+        ));
+
+        acf_register_block_type(array(
+            'name'              => 'supporters',
+            'title'             => __('Supporters'),
+            'description'       => __('Display a list of supporters.'),
+            'render_template'   => 'template-parts/blocks/supporters.php',
+            'category'          => 'sic',
+            'icon'              => '',
+            'keywords'          => array("supporters", "supporter", "supporters"),
         ));
     }
 }

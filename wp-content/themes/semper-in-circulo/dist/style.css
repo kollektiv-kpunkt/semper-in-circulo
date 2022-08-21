@@ -867,6 +867,70 @@
      object-fit: cover;
 }
 
+.sic-logos-inner {
+  --cols: 4;
+  --gutter: 1rem;
+  gap: var(--gutter);
+}
+.sic-logos-inner .sic-logos-logo-wrapper {
+  width: calc(100% / var(--cols) - (var(--cols) - 1) * var(--gutter) / var(--cols));
+}
+.sic-logos-inner .sic-logos-logo {
+  padding-bottom: 100%;
+  position: relative;
+}
+.sic-logos-inner .sic-logos-logo img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 980px) {
+  .sic-logos-inner {
+    --cols: 3;
+  }
+}
+@media (max-width: 580px) {
+  .sic-logos-inner {
+    --cols: 2;
+  }
+}
+
+.sic-people-inner {
+  --cols: 3;
+  --gutter: 2rem;
+  gap: var(--gutter);
+}
+.sic-people-inner .sic-person-wrapper {
+  width: calc(100% / var(--cols) - (var(--cols) - 1) * var(--gutter) / var(--cols));
+}
+.sic-people-inner .sic-person-image {
+  padding-bottom: 100%;
+  position: relative;
+}
+.sic-people-inner .sic-person-image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 980px) {
+  .sic-people-inner {
+    --cols: 2;
+  }
+}
+@media (max-width: 480px) {
+  .sic-people-inner {
+    --cols: 1;
+  }
+}
+
 @font-face {
   font-family: "akrobat";
   src: url(/wp-content/themes/semper-in-circulo/dist/fonts/Akrobat-ExtraBold.eot?8ec3990ce08fd7ec372d6543a255b853); /* IE9 Compat Modes */
