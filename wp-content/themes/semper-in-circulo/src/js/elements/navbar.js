@@ -10,4 +10,13 @@ if (document.querySelector(".sic-navbar-mobile-menu-button")) {
         .querySelector(".sic-navbar-mobile-menu-items")
         .classList.toggle("sic-navbar-mobile-menu-items-open");
     });
+
+  document
+    .querySelectorAll(".sic-navbar-mobile-menu-items .menu-item-has-children")
+    .forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+        item.classList.toggle("is-open");
+      });
+    });
 }

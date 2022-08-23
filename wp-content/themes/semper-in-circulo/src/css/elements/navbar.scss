@@ -1,3 +1,9 @@
+.menu-main-container {
+    ul {
+        margin: 0;
+    }
+}
+
 .sic-navbar-wrapper {
     position: fixed;
     top: 2rem;
@@ -28,7 +34,7 @@
 }
 
 .sic-navbar-menu-container {
-    @media (max-width: 780px) {
+    @media (max-width: 980px) {
         display: none;
     }
 }
@@ -44,6 +50,7 @@
         margin-right: 2rem;
         margin-top: auto;
         margin-bottom: auto;
+        list-style: none;
 
         &:not(.sic-button) {
             color: white !important;
@@ -57,6 +64,35 @@
                 color: var(--accent-120);
                 border-bottom-color: var(--accent-120);
             }
+        }
+
+        &.menu-item-has-children::after {
+            content: "\203a";
+            font-size: 2em;
+            line-height: 0;
+            margin-left: 0.2em;
+            display: inline-block;
+            transition: 0.125s ease transform;
+            transform: translateY(0.15em) rotate(90deg);
+            cursor: pointer;
+        }
+
+        .sub-menu {
+            position: absolute;
+            background-color: var(--accent-120);
+            padding: 0.75rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.125s ease-in-out opacity, 0.125s ease-in-out visibility;
+
+            .menu-item + .menu-item {
+                margin-top: 0.5rem;
+            }
+        }
+
+        &.menu-item-has-children:hover > .sub-menu {
+            visibility: visible;
+            opacity: 1;
         }
 
         &.sic-menu-button {
@@ -76,7 +112,7 @@
 .sic-navbar-mobile-menu-container {
     display: none;
 
-    @media (max-width: 780px) {
+    @media (max-width: 980px) {
         display: flex;
     }
 
@@ -147,12 +183,49 @@
         line-height: 0.8;
         margin-bottom: 2rem;
         color: var(--accent-120);
+        list-style: none;
+
+        &.menu-item-has-children > a::after {
+            content: "\203a";
+            font-size: 2em;
+            line-height: 0;
+            margin-left: 0.2em;
+            display: inline-block;
+            transition: 0.125s ease transform;
+            transform: translateY(0.15em) rotate(90deg);
+            cursor: pointer;
+        }
+
+        .sub-menu {
+            visibility: hidden;
+            opacity: 0;
+            height: 0;
+            transform: scaleY(0);
+            transform-origin: center top;
+            transition: 0.125s ease-in-out transform, 0.125s ease-in-out opacity, 0.125s ease-in-out visibility;
+
+            .menu-item {
+                font-size: 1.5rem;
+            }
+
+            .menu-item {
+                margin-top: 0.5rem;
+            }
+        }
+
+        &.menu-item-has-children.is-open > .sub-menu {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            transform: scaleY(1);
+        }
     }
 
     .menu-item.sic-menu-button {
         margin-bottom: 1rem;
         font-size: 1.75rem;
         border-radius: 0;
+        list-style: none;
 
         &:last-of-type {
             margin-bottom: 0;

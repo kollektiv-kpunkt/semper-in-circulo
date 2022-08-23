@@ -10,8 +10,8 @@ $_ENV["BROWSER"] = $browserAgent;
 
 /* sic */
 function sic_scripts() {
-    wp_enqueue_style( 'bundle', get_template_directory_uri() . '/dist/bundle.min.css', [], "2.0.0" );
-    wp_enqueue_script( 'bundle', get_template_directory_uri() . '/dist/app.min.js', array(), "2.0.0", true );
+    wp_enqueue_style( 'bundle', get_template_directory_uri() . '/dist/bundle.min.css', [], "2.0.1" );
+    wp_enqueue_script( 'bundle', get_template_directory_uri() . '/dist/app.min.js', array(), "2.0.1", true );
     wp_enqueue_script( 'hyphenopoly', get_template_directory_uri() . '/lib/hyphenopoly/Hyphenopoly_Loader.js', array('jquery'), '1.0.0', false );
 }
 add_action( 'wp_enqueue_scripts', 'sic_scripts' );
@@ -89,6 +89,15 @@ function sic_enable_flush_rules() {
 add_action( "admin_init", 'sic_enable_flush_rules' );
 
 // Shortcodes
+
+function sic_cookie_shortcode($atts, $content = null) {
+    ob_start();
+    echo('<a><button data-cc="c-settings">' . $content . '</button></a>');
+    return ob_get_clean();
+}
+
+add_shortcode('sic-cookie-settings', 'sic_cookie_shortcode');
+
 
 /* Element Shortcode */
 function sic_element_shortcode($atts) {

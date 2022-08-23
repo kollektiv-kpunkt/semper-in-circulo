@@ -22,7 +22,7 @@
     "js-cookie": "^3.0.1",
     "normalize.css": "^8.0.1",
     "uuid": "^8.3.2",
-    "vanilla-cookieconsent": "^2.8.0",
+    "vanilla-cookieconsent": "^2.8.5",
     "when-in-viewport": "^2.0.4"
   },
   "scripts": {

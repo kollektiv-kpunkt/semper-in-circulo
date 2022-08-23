@@ -7,6 +7,10 @@
     transition: 0.25s ease background-color;
 
     summary {
+        .sic-toggle-title {
+            max-width: 80%;
+        }
+
         list-style: none;
         cursor: pointer;
         color: var(--accent-120);

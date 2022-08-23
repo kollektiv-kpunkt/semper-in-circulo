@@ -152,3 +152,16 @@ p.pagelead {
     font-size: 1.15rem;
     margin-bottom: 4rem;
 }
+
+ul {
+    padding-left: 0.75rem;
+    margin-top: 0.5rem;
+
+    li {
+        list-style: disc;
+
+        &+li {
+            margin-top: 0.25rem;
+        }
+    }
+}

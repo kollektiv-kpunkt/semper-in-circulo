@@ -1,4 +1,11 @@
 /*!
+ * CookieConsent v2.8.5
+ * https://www.github.com/orestbida/cookieconsent
+ * Author Orest Bida
+ * Released under the MIT License
+ */
+
+/*!
  * Cropper.js v1.5.12
  * https://fengyuanchen.github.io/cropperjs
  *
