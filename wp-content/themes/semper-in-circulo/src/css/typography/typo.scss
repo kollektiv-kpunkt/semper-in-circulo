@@ -138,7 +138,7 @@ a:not(.sic-button):not(.sic-noline) {
     transition: 0.125s ease-in-out background-size, 0.125s ease-in-out color;
 }
 
-a:hover {
+a:not(.sic-button):not(.sic-noline):hover {
     background-size: 100% 100%;
     color: var(--linkhover);
 }

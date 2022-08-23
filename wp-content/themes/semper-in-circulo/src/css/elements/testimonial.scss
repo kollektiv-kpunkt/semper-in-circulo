@@ -1,18 +1,17 @@
 // Stage
 
 .sic-testimonial-stage-inner {
-    width: 1080px;
+    width: 540px;
     max-width: 90vw;
-    margin: 0 auto;
 }
 
 
 // Testimonial
 
 .sic-testimonial-wrapper {
-    --sic-testi-base-size: 15px;
+    --sic-testi-base-size: 7.5px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 600px) {
         --sic-testi-base-size: 1.25vw;
     }
 }
@@ -119,5 +118,21 @@
         &.sic-testimonial-position {
             font-size: calc(3.3 * var(--sic-testi-base-size));;
         }
+    }
+}
+
+.testimonial-color {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--switcher-color);
+    border-radius: 4px;
+    cursor: pointer;
+
+    &[data-color="accent"] {
+        --switcher-color: var(--accent);
+    }
+
+    &[data-color="secondary"] {
+        --switcher-color: var(--secondary);
     }
 }

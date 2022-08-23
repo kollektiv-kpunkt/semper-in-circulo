@@ -13,6 +13,7 @@
                 selectors: {
                     "#main-content": {}
                 },
+                dontHyphenateClass: "nohypen",
                 exceptions: {
                     "global": "F-35"
                 },

@@ -1,4 +1,4 @@
-.sic-form-wrapper {
+.sic-form-wrapper, .wpcf7-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -19,7 +19,7 @@
         --formcolor: white;
     }
 
-    .sic-button {
+    .sic-button[type="submit"] {
         margin-top: var(--rowgutter);
         --btn-border: var(--formcolor);
         --btn-color: var(--formcolor);
@@ -33,6 +33,10 @@
         }
 
     }
+}
+
+.sic-step-wrapper:not([data-step="current"]) {
+    display: none;
 }
 
 .sic-form-group {
@@ -78,6 +82,7 @@
     border-bottom: 2px solid var(--formcolor);
     padding: 0.1em 0;
     outline: none;
+    width: 100%;
 }
 
 .sic-form-group-checkbox label {
@@ -113,4 +118,24 @@
 .sic-form-overlay.sic-form-overlay-visible {
     opacity: 1;
     visibility: visible;
+}
+
+.sic-alertBar {
+    padding: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+    border-style: solid;
+
+    &.success {
+        background-color: var(--accent-20);
+        border-color: var(--accent-120);
+        color: var(--accent-120);
+    }
+
+    &.error {
+        background-color: var(--accent-120);
+        border-color: var(--accent-20);
+        color: var(--accent-20);
+    }
 }

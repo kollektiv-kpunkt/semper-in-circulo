@@ -32,6 +32,10 @@
     &.sic-button-line-fill {
         --bordercolor: var(--textcolor);
     }
+
+    &.text-sm {
+        font-size: 1rem;
+    }
 }
 
 .sic-button:hover {

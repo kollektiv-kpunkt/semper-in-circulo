@@ -10,8 +10,13 @@ $formid = rand(1,100000);
             </div>
         </div>
         <div class="sic-mitmachen-form-wrapper">
-            <h2 class="text-6xl"><span class="sic-highlight">Sei Dabei!</span></h2>
-            <form action="#" id="formid-<?= $formid ?>" class="sic-api-form sic-form-wrapper" data-endpoint="/api/v1/mitmachen">
+            <form action="#" id="formid-<?= $formid ?>" class="sic-api-form sic-form-wrapper sic-step-wrapper" data-endpoint="/api/v1/mitmachen" data-step="current">
+                <h2 class="text-6xl mr-auto ml-0"><span class="sic-highlight">Sei Dabei!</span></h2>
+                <script formconfig type="application/json">
+                    {
+                        "action" : "nextStep"
+                    }
+                </script>
                 <div class="sic-form-group">
                     <label for="name-<?=$formid?>">Name</label>
                     <input type="text" name="name" id="name-<?=$formid?>" class="sic-form-input" required>
@@ -26,6 +31,15 @@ $formid = rand(1,100000);
                 </div>
                 <button type="submit" class="sic-button sic-button-next w-full">Ich bin dabei</button>
             </form>
+            <div class="sic-step-wrapper text-accent-120" data-step="hidden">
+                <h3><span class="sic-highlight nohypen">Danke für deine Unterstützung!</span></h3>
+                <p>Danke, dass du den Gegenvorschlag zur Kreislaufinitiative unterstützt! Wenn du uns weiterhilfen willst, kannst du hier verschiedene Dinge tun:</p>
+                <div class="sic-mitmachen-buttons flex flex-wrap gap-1 mt-4">
+                    <a href="/spenden" class="sic-button sic-button-next text-sm w-full">Spenden</a>
+                    <a href="/testimonial" class="sic-button sic-button-neg sic-button-next text-sm w-full">Testimonial schreiben</a>
+                    <a href="/material-bestellen" class="sic-button sic-button-next text-sm w-full">Material bestellen</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

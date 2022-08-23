@@ -11,6 +11,8 @@
     --accent-30: #BEE6D8;
     --accent-20: #D3EEE4;
     --accent-10: #EAF7F2;
+    --accent-name: var(--accent);
+    --accent-positon: var(--secondary);
 
     --secondary-120: #074858;
     --secondary-110: #085163;
@@ -24,4 +26,6 @@
     --secondary-30: #B6CED4;
     --secondary-20: #CEDEE2;
     --secondary-10: #E7EFF1;
+    --secondary-name: var(--secondary);
+    --secondary-positon: var(--accent);
 }

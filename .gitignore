@@ -51,4 +51,4 @@ wp-config.php
 #/wp-content/themes
 
 *duplicator.bak
-wp-content\backups-dup-lite/
+wp-content/backups-dup-lite/

@@ -2,6 +2,11 @@
 require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
+$Browser = new foroco\BrowserDetection();
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+$browserAgent = $Browser->getBrowser($useragent);
+
+$_ENV["BROWSER"] = $browserAgent;
 
 /* sic */
 function sic_scripts() {
@@ -238,6 +243,8 @@ function sic_wrap_blocks( $block_content, $block ) {
     } else if (in_array($block['blockName'], $lg)) {
         $width = "lg-container";
     } else if (in_array($block['blockName'], $md)) {
+        $width = "md-container";
+    } else if ($block["blockName"] == "core/image" && $block["attrs"]["className"] == "large") {
         $width = "md-container";
     } else {
         if (is_front_page()) {

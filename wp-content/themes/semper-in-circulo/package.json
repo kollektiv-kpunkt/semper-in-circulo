@@ -16,7 +16,9 @@
     "webpack-livereload-plugin": "^3.0.2"
   },
   "dependencies": {
+    "cropperjs": "^1.5.12",
     "feather-icons": "^4.29.0",
+    "html-to-image": "^1.10.4",
     "js-cookie": "^3.0.1",
     "normalize.css": "^8.0.1",
     "uuid": "^8.3.2",
