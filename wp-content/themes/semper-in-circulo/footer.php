@@ -2,9 +2,6 @@
 <?php
 get_template_part( "template-parts/elements/footer");
 ?>
-<?php
-wp_footer(  );
-?>
 <script type="text/plain" data-cookiecategory="analytics">
   var _paq = window._paq = window._paq || [];
   _paq.push(['requireConsent']);
@@ -18,5 +15,9 @@ wp_footer(  );
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
+
+<?php
+wp_footer(  );
+?>
 </body>
 </html>

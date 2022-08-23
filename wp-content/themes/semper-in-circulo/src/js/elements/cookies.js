@@ -3,7 +3,6 @@ import "vanilla-cookieconsent/dist/cookieconsent.css";
 import "./cookie-custom.css";
 
 const cookieconsent = initCookieConsent();
-const lang = document.querySelector("body").getAttribute("data-current-lang");
 
 cookieconsent.run({
   current_lang: "de",

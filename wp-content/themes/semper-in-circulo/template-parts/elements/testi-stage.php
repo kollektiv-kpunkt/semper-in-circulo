@@ -8,7 +8,7 @@ $logo = file_get_contents(get_template_directory() . '/template-parts/elements/i
 <div class="sic-testimonial-stage-wrapper mt-12">
     <div class="sic-testimonial-stage-inner">
         <div class="sic-testimonial-wrapper">
-            <div class="sic-testimonial-inner" data-browser="<?= $_ENV["BROWSER"]["browser_name"] ?>">
+            <div class="sic-testimonial-inner<?= ($_ENV["BROWSER"]["browser_safari_original"]) ? " fuckusafari" : ""; ?>">
                 <div class="sic-testimonial-layer">
                     <div class="sic-testimonial-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80" alt="">

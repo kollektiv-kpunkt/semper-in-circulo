@@ -111,7 +111,7 @@ if (document.querySelector(".sic-testimonial-download")) {
       var uuid = this.parentElement.parentElement
         .querySelector("form")
         .getAttribute("data-uuid");
-      if (testimonial.getAttribute("data-browser") === "safari") {
+      if (testimonial.classList.contains("fuckusafari")) {
         downloadSafari(testimonial, name, uuid);
       } else {
         downloadRegular(testimonial, name, uuid);
@@ -153,7 +153,7 @@ function downloadSafari(testimonial, name, uuid) {
 function pixelsAreWhite(imageData) {
   let white = [];
   for (let i = 0; i < 60; i++) {
-    white[i] = imageData.data[i] === 255;
+    white[i] = imageData.data[i] === 0;
   }
   console.log(white);
   return white.every(Boolean);
