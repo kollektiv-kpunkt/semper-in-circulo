@@ -10,8 +10,8 @@ $_ENV["BROWSER"] = $browserAgent;
 
 /* sic */
 function sic_scripts() {
-    wp_enqueue_style( 'bundle', get_template_directory_uri() . '/dist/bundle.min.css', [], "2.0.9" );
-    wp_enqueue_script( 'bundle', get_template_directory_uri() . '/dist/app.min.js', array(), "2.0.9", true );
+    wp_enqueue_style( 'bundle', get_template_directory_uri() . '/dist/bundle.min.css', [], "2.0.11" );
+    wp_enqueue_script( 'bundle', get_template_directory_uri() . '/dist/app.min.js', array(), "2.0.11", true );
     wp_enqueue_script( 'hyphenopoly', get_template_directory_uri() . '/lib/hyphenopoly/Hyphenopoly_Loader.js', array('jquery'), '1.0.0', false );
 }
 add_action( 'wp_enqueue_scripts', 'sic_scripts' );

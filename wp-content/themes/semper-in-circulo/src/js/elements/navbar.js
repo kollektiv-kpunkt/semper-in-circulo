@@ -12,11 +12,13 @@ if (document.querySelector(".sic-navbar-mobile-menu-button")) {
     });
 
   document
-    .querySelectorAll(".sic-navbar-mobile-menu-items .menu-item-has-children")
+    .querySelectorAll(
+      ".sic-navbar-mobile-menu-items .menu-item-has-children > a"
+    )
     .forEach(function (item) {
       item.addEventListener("click", function (e) {
         e.preventDefault();
-        item.classList.toggle("is-open");
+        item.parentElement.classList.toggle("is-open");
       });
     });
 }

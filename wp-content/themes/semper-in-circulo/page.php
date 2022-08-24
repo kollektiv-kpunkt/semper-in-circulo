@@ -10,7 +10,7 @@ $heroine_img = get_template_directory_uri(  ) . "/template-parts/img/" . rand(1,
             <div class="sic-page-heroine-image-inner">
                 <img src="<?php echo $heroine_img; ?>" alt="">
                 <div class="sic-page-heroine-image-overlay"></div>
-                <h1 class="sic-page-heroine-image-title"><span class="sic-highlight sic-highlight-neg"><?= the_title() ?></span></h1>
+                <h1 class="sic-page-heroine-image-title"><span class="sic-highlight sic-highlight-neg nohypen"><?= the_title() ?></span></h1>
             </div>
         </div>
     </div>
