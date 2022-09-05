@@ -14,13 +14,13 @@ cookieconsent.run({
   revision: 1, // default: 0
 
   onFirstAction: function (cookie, user_preferences) {
-    if (cookie.level.includes("analytics")) {
+    if (cookie.accepted_categories.includes("analytics")) {
       _paq.push(["rememberConsentGiven"]);
     }
   },
 
   onChange: function (cookie, changed_preferences) {
-    if (cookie.level.includes("analytics")) {
+    if (cookie.categories.includes("analytics")) {
       _paq.push(["rememberConsentGiven"]);
     } else {
       _paq.push(["forgetConsentGiven"]);

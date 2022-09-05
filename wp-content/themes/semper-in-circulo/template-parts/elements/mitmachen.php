@@ -6,7 +6,7 @@ $formid = rand(1,100000);
     <div class="sic-2col sic-2col-nogap md-container items-center px-8">
         <div class="sic-mitmachen-image-wrapper">
             <div class="sic-mitmachen-imager-inner">
-                <img src="<?= get_template_directory_uri(  ) ?>/template-parts/img/<?= rand(1,10) ?>.jpg">
+                <img src="<?= get_template_directory_uri(  ) ?>/template-parts/img/<?= rand(1,9) ?>.jpg">
             </div>
         </div>
         <div class="sic-mitmachen-form-wrapper">

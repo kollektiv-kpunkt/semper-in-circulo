@@ -1,5 +1,5 @@
 <?php
-$heroine_img = get_template_directory_uri(  ) . "/template-parts/img/" . rand(1,10) . ".jpg";
+$heroine_img = get_template_directory_uri(  ) . "/template-parts/img/" . rand(1,9) . ".jpg";
 ?>
 
 <div class="sic-img-spacer-wrapper my-20">

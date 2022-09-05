@@ -56,6 +56,26 @@ $orgas = array(
     "JSVP" => [
         "img" => "JSVP-Logo_kontur_512.png",
         "name" => "junge Schweizerische Volkspartei Kanton Zürich"
+    ],
+    "WWF" => [
+        "img" => "wwf_logo_ohne Rahmen_gross.jpg",
+        "name" => "World Wildlife Fund"
+    ],
+    "Greenpeace" => [
+        "img" => "Greenpeace_Logo_Green_RGB.png",
+        "name" => "Greenpeace"
+    ],
+    "gv" => [
+        "img" => "blau_Zuerich.png",
+        "name" => "Gewerbeverein Zürich"
+    ],
+    "sct" => [
+        "img" => "SwissCleanTech.png",
+        "name" => "Swiss Clean Tech"
+    ],
+    "öbu" => [
+        "img" => "oebu_c_rgb_pos_weiss.jpg",
+        "name" => "öbu"
     ]
 )
 ?>

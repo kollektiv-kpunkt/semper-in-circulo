@@ -12,6 +12,16 @@ if (isset($_GET["testi-email"])) {
 }
 ?>
 
+<?php
+if ($_ENV["BROWSER"]["browser_firefox_original"] == 1) :
+?>
+<div class="sm-container">
+    <p><b>Tut uns leid, aber dein Browser wird für das generieren von Testimonials nicht unterstützt.</b> Wir sind derzeit daran das Problem zu lösen. In der Zwischenzeit, benutze bitte einen anderen Browser wie Chrome, Safari, Edge, Opera oder Brave.</p>
+</div>
+<?php
+else:
+?>
+
 <div class="sm-container">
     <div class="sic-testimonial-form-wrapper">
         <form action="#" id="formid-<?= $formid ?>-1" class="sic-api-form sic-form-wrapper sic-step-wrapper" data-endpoint="/api/v1/testimonial/1" data-step="current">
@@ -66,3 +76,7 @@ if (isset($_GET["testi-email"])) {
         <a href="#" class="sic-button sic-button-next mt-12 sic-testimonial-download">Testimonial herunterladen</a>
     </div>
 </div>
+
+<?php
+endif;
+?>

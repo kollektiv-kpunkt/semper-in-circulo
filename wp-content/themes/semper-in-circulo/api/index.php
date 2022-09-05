@@ -78,6 +78,11 @@ Router::get('/api/v1/freischalten/{uuid}', function($uuid) {
     include(__DIR__ . '/freischalten.php');
 });
 
+Router::post('/api/v1/spende', function() {
+    global $client;
+    include(__DIR__ . '/donation.php');
+});
+
 Router::start();
 
 ?>
